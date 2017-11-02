@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+
+<body>
+作者：<input type="text" id="ipt1"></br>
+标题：<input type="text" id="ipt2"></br>
+内容：<input type="text" id="ipt3"></br>
+<br>
+<input type="submit" id="but">
+
+<script>
+
+
+    $(function(){
+
+
+        $("#but").click(function(){
+            var n=$("#ipt1").val();
+var t=$("#ipt2").val();
+var c=$("#ipt3").val();
+  console.log(n)
+  console.log(t)
+  console.log(c)
+        $.ajax({
+            url:"http://localhost:3000/item/list",
+            type:'POST',
+            dataType:"json",
+            data:{n:n,t:t,c:c},
+            success:function(e){
+               console.log(e)
+            }
+        })   
+
+
+        })   
+    })           
+</script>
+
+</body>
+</html>
+
+
